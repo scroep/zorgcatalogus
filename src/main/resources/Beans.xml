@@ -13,5 +13,8 @@
   
    <!-- Definition for spellChecker bean -->
    <bean id = "gemeenteRepository" class = "nl.wizardit.zorgcatalogus.repositories.GemeenteRepository"></bean>
+     <bean id = "gemeenteBeherenController" class = "nl.wizardit.zorgcatalogus.restcontrollers.ProductDienstController"></bean>
+   
+   
 
 </beans>
