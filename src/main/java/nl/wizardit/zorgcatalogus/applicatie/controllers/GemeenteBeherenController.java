@@ -9,9 +9,13 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,13 +35,14 @@ import nl.wizardit.zorgcatalogus.domein.Gemeente;
 import nl.wizardit.zorgcatalogus.repositories.GemeenteRepository;
 //import nl.wizardit.zorgcatalogus.restcontrollers.GemeenteController;
 
-@RestController
+@Component
 public class GemeenteBeherenController implements Initializable  {
 	
   // private TestModel testmodel = new TestModel();
 	
-	@Autowired
-	public GemeenteRepository gemeenterepository; 
+
+	@Autowired 
+	private GemeenteRepository gemeenteRepository = new GemeenteRepository();
 
 	
 	//public GemeenteController gemeenteController;
@@ -55,6 +60,7 @@ public class GemeenteBeherenController implements Initializable  {
 	
 	public GemeenteBeherenController(){
 		System.out.println("constructoooor");
+
 		//List<Gemeente> lijst = gemeenteRepository.findAll();
 
 	}
@@ -97,7 +103,7 @@ public class GemeenteBeherenController implements Initializable  {
 	
 	
 	public void gemeenteVerwijderenKnop_click(ActionEvent event){
-	    System.out.println("De bots: " + gemeenterepository);
+	   System.out.println("De bots: " + gemeenteRepository);
 
 	}
 	
