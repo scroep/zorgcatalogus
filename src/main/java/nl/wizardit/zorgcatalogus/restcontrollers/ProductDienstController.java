@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,27 +38,38 @@ public class ProductDienstController {
 
 	public ObservableList<Gemeente> data = FXCollections.observableArrayList();
 
-	public ProductDienstController() {
-		
-
-	}
+	
 
 	@RequestMapping("/tests")
 	public List<Gemeente> getAllgemeentes() {
 		List<Gemeente> gemeenten = gemeenteRepository.findAll();
-		System.out.println("gemeente controller" + gemeenteRepository);
-		gemeenteCode.setCellValueFactory(new PropertyValueFactory<>("gemeenteCode"));
-		gemeenteNaam.setCellValueFactory(new PropertyValueFactory<>("gemeenteNaam"));
-		isActief.setCellValueFactory(new PropertyValueFactory<>("isActief"));
-		//System.out.println(gemeenteRepository);
+		
+		System.out.println(gemeenten);
+		for(Gemeente gemeente : gemeenten){
+			
+			System.out.println(gemeente.getGemeenteNaam());	
+		}
+		System.out.println("REST API : " + gemeenteRepository);
 		return gemeenten;
 		
 	}
 	
 	
-	
+
 	public void vulTable(ActionEvent event){
+		System.out.println("Applicatie :" + gemeenteRepository);
 		
+		
+		
+		
+		
+		//gemeenteCode.setCellValueFactory(new PropertyValueFactory<>("gemeenteCode"));
+		//gemeenteNaam.setCellValueFactory(new PropertyValueFactory<>("gemeenteNaam"));
+		//isActief.setCellValueFactory(new PropertyValueFactory<>("isActief"));
+		
+		//List<Gemeente> lijst = gemeenteRepository.findAll();
+		//data.addAll(lijst);
+		//table.setItems(data);
 	}
 
 }

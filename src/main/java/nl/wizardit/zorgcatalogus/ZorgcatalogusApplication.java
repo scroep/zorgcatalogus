@@ -11,9 +11,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import nl.wizardit.zorgcatalogus.restcontrollers.ProductDienstController;
 
 @SpringBootApplication
-//@ImportResource("classpath:beans.xml")
+@ImportResource("classpath:beans.xml")
 public class ZorgcatalogusApplication extends Application{
 
 	

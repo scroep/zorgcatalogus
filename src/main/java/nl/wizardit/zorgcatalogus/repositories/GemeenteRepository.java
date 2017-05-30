@@ -5,12 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import nl.wizardit.zorgcatalogus.domein.Gemeente;
 
-@Component
+@Repository
 public class GemeenteRepository {
 	
 	@Autowired

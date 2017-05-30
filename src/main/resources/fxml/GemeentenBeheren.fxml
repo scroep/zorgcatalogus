@@ -22,6 +22,6 @@
         </columns>
       </TableView>
       <Button layoutX="348.0" layoutY="432.0" mnemonicParsing="false" text="Gemeente toevoegen" />
-      <Button layoutX="171.0" layoutY="432.0" mnemonicParsing="false" text="Gemeente verwijderen" />
+      <Button layoutX="171.0" layoutY="432.0" mnemonicParsing="false" onAction="#vulTable" text="Gemeente verwijderen" />
    </children>
 </AnchorPane>
