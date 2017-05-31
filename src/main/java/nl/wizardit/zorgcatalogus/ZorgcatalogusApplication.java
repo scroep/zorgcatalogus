@@ -3,7 +3,6 @@ package nl.wizardit.zorgcatalogus;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 import javafx.application.Application;
@@ -11,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import nl.wizardit.zorgcatalogus.restcontrollers.ProductDienstController;
 
 @SpringBootApplication
 @ImportResource("classpath:beans.xml")

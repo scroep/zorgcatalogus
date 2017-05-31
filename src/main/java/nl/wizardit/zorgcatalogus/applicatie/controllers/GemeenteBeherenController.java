@@ -1,17 +1,12 @@
-package nl.wizardit.zorgcatalogus.restcontrollers;
+package nl.wizardit.zorgcatalogus.applicatie.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,22 +20,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import nl.wizardit.zorgcatalogus.applicatie.models.TestModel;
+import nl.wizardit.zorgcatalogus.applicatie.models.GemeenteModel;
 import nl.wizardit.zorgcatalogus.domein.Gemeente;
-import nl.wizardit.zorgcatalogus.repositories.GemeenteRepository;
-//import nl.wizardit.zorgcatalogus.restcontrollers.GemeenteController;
 
 @Component
 public class GemeenteBeherenController implements Initializable  {
 	
-  // private TestModel testmodel = new TestModel();
-	
+	private GemeenteModel gemeenteModel = new GemeenteModel();
 
-	@Autowired 
-	private GemeenteRepository gemeenteRepository;
-
-	
-	//public GemeenteController gemeenteController;
 	@FXML
 	private TableView<Gemeente> table;
 	@FXML
@@ -56,28 +43,19 @@ public class GemeenteBeherenController implements Initializable  {
 	public GemeenteBeherenController(){
 		System.out.println("constructoooor");
 
-		//List<Gemeente> lijst = gemeenteRepository.findAll();
 
 	}
     
 	public void initialize(URL location, ResourceBundle resources) {
-		
-		//data.add(new Gemeente(55,"Apeldoorn",true));
-		//data.add(new Gemeente(26,"Arnhem",true));
-		//data.add(new Gemeente(34,"Ede",true));
-		
+
 	
-		
 		gemeenteCode.setCellValueFactory(new PropertyValueFactory<>("gemeenteCode"));
 		gemeenteNaam.setCellValueFactory(new PropertyValueFactory<>("gemeenteNaam"));
 		isActief.setCellValueFactory(new PropertyValueFactory<>("isActief"));
 		
-		System.out.println("test"+ gemeenteRepository);
-		
-		
-		//List<Gemeente> lijst = gemeenteRepository.findAll();
-		//data.addAll(lijst);
-		//table.setItems(data);
+	
+		data.addAll(gemeenteModel.getAlleGemeentes());
+		table.setItems(data);
 	}
 	
 	
@@ -93,7 +71,6 @@ public class GemeenteBeherenController implements Initializable  {
 	
 	
 	public void gemeenteVerwijderenKnop_click(ActionEvent event){
-	   System.out.println("De bots: " + gemeenteRepository.findAll());
 
 	}
 	
