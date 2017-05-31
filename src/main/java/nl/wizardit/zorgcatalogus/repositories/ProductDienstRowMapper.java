@@ -17,7 +17,7 @@ public class ProductDienstRowMapper implements RowMapper {
 		productDienst.setProductDienstcode(rs.getInt("product_dienst_code"));
 		productDienst.setCategorieCode(rs.getInt("categorie_code"));
 		productDienst.setProductDienstNaam(rs.getString("product_dienst_naam"));
-		productDienst.setProductDienstOmschrijving(rs.getString("product_dienst_ommschrijving"));
+		productDienst.setProductDienstOmschrijving(rs.getString("product_dienst_omschrijving"));
 		productDienst.setActief(rs.getBoolean("is_actief"));
 		return productDienst;
 	}

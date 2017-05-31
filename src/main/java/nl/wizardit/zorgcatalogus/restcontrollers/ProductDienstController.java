@@ -5,24 +5,25 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import nl.wizardit.zorgcatalogus.domein.Gemeente;
-import nl.wizardit.zorgcatalogus.repositories.GemeenteRepository;
+import nl.wizardit.zorgcatalogus.domein.ProductDienst;
+import nl.wizardit.zorgcatalogus.repositories.ProductDienstRepository;
 
 @RestController
 public class ProductDienstController {
 
 	@Autowired
-	private GemeenteRepository gemeenteRepository;
+	private ProductDienstRepository productDienstRepository;
 
 
-	@RequestMapping("/tests")
-	public List<Gemeente> getAllgemeentes() {
-		List<Gemeente> gemeenten = gemeenteRepository.findAll();		
-		return gemeenten;
+	@RequestMapping("/zorgcatalogus/productdienst/{id}")
+	public ProductDienst getProductDienst(@PathVariable("id") int id) {
+	   ProductDienst productdienst = productDienstRepository.getProductDienst(id);
+		return productdienst;
 		
 	}
 }
