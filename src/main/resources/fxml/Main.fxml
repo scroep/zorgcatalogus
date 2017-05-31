@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="393.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.MainController">
+<AnchorPane prefHeight="393.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="196.0" layoutY="158.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="175.0" text="Contracten beheren" />
       <ImageView fitHeight="122.0" fitWidth="119.0" layoutX="26.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">

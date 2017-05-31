@@ -2,9 +2,19 @@ package nl.wizardit.zorgcatalogus.applicatie.controllers;
 
 
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import nl.wizardit.zorgcatalogus.applicatie.models.ProductDienstModel;
 import nl.wizardit.zorgcatalogus.domein.ProductDienst;
 
@@ -48,5 +58,24 @@ public class ProductDienstInformatieController {
 		omschrijvingResultaat.setText(productDienst.getProductDienstOmschrijving());
 		
 		return true;
+	}
+	
+	
+	public void terugKnop_click(ActionEvent event) throws IOException{
+		((Node) event.getSource()).getScene().getWindow().hide();
+		 Stage stage = new Stage();
+		 FXMLLoader  loader = new FXMLLoader();
+		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductDienstCodeInvullen.fxml").openStream());
+		 Scene scene = new Scene(rootNode);
+		 stage.setScene(scene);
+	     stage.show();
+	}
+	
+	public void toonContracten(ActionEvent event) throws IOException{
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Geen contracten");
+		alert.setContentText("Er zijn geen contracten gevonden voor het product of dienst");
+		alert.show();
+		
 	}
 }

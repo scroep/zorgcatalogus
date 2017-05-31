@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -24,11 +26,11 @@ public class ProductDienstCodeInvullenController {
 	private Button zoekKnop;
 
 	public void zoekKnop_click(ActionEvent event) throws IOException {
-		((Node) event.getSource()).getScene().getWindow().hide();
-		Stage stage = new Stage();
+		
 		FXMLLoader loader = new FXMLLoader();
 		Parent rootNode = loader.load(getClass().getResource("/fxml/ProductDienstInformatie.fxml").openStream());
 		ProductDienstInformatieController productDienstInformatieController = (ProductDienstInformatieController) loader.getController();
+
 
 		try {
 			int productCode;
@@ -37,21 +39,40 @@ public class ProductDienstCodeInvullenController {
 			productDienstInformatieController.setProductDienstCode(productCode);
 			
 			if (!productDienstInformatieController.vulInformatieIn()) {
-				System.err.println("Product bestaat niet!");
-				// TODO: Product bestaat niet.
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Product bestaat niet");
+				alert.setContentText("De ingevoerde productcode komt niet overeen met een product");
+				alert.showAndWait();
+				return;
 			}
 			
-			Scene scene = new Scene(rootNode);
-			stage.setScene(scene);
-			stage.show();
-
 		} catch (NumberFormatException e) {
-			System.err.println("Ongeldige invoer!");
-			// TODO: Ongeldige invoer. Gebruik nummers.
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Ongeldige invoer");
+			alert.setContentText("De invoer is ongeldig. Gebruik een nummer.");
+			alert.showAndWait();
+			return;
 		}
 
+		((Node) event.getSource()).getScene().getWindow().hide();
+		Stage stage = new Stage();
 		
 
+		Scene scene = new Scene(rootNode);
+		stage.setScene(scene);
+		stage.show();
+
 	}
+	
+	public void terugKnop_click(ActionEvent event) throws IOException{
+		((Node) event.getSource()).getScene().getWindow().hide();
+		 Stage stage = new Stage();
+		 FXMLLoader  loader = new FXMLLoader();
+		 Parent rootNode  = loader.load(getClass().getResource("/src/main/fxml/Main.fxml").openStream());
+		 Scene scene = new Scene(rootNode);
+		 stage.setScene(scene);
+	     stage.show();
+	}
+	
 
 }

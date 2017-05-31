@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.ProductDienstCodeInvullenController">
    <children>
-      <Label layoutX="103.0" layoutY="33.0" prefHeight="40.0" prefWidth="244.0" text="Zoek product/dienst">
+      <Label layoutX="97.0" layoutY="55.0" prefHeight="40.0" prefWidth="244.0" text="Zoek product/dienst">
          <font>
             <Font size="24.0" />
          </font>
@@ -16,5 +16,6 @@
       <TextField fx:id="invoerVak" layoutX="51.0" layoutY="157.0" prefHeight="27.0" prefWidth="244.0" />
       <Button fx:id="zoekKnop" layoutX="306.0" layoutY="157.0" mnemonicParsing="false" onAction="#zoekKnop_click" prefHeight="27.0" prefWidth="55.0" text="Zoek" />
       <Label layoutX="51.0" layoutY="133.0" text="Voer  product/dienst code in:" />
+      <Button layoutX="6.0" layoutY="17.0" mnemonicParsing="false" onAction="#terugKnop_click" text="Terug naar hoofdmenu" />
    </children>
 </AnchorPane>
