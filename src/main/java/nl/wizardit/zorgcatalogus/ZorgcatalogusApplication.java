@@ -36,7 +36,6 @@ public class ZorgcatalogusApplication extends Application{
 	public void init() throws Exception {
 	    springContext = SpringApplication.run(ZorgcatalogusApplication.class);
 	    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
-	    fxmlLoader.setController(new MainController());
 	    fxmlLoader.setControllerFactory(springContext::getBean);
 	    rootNode = fxmlLoader.load();
 

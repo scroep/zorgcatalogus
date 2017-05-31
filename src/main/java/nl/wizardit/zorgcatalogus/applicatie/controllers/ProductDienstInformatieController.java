@@ -74,7 +74,7 @@ public class ProductDienstInformatieController {
 	public void toonContracten(ActionEvent event) throws IOException{
 		Alert alert = new Alert(AlertType.WARNING);
 		alert.setTitle("Geen contracten");
-		alert.setContentText("Er zijn geen contracten gevonden voor het product of dienst");
+		alert.setContentText("Er zijn geen contracten gevonden voor het product of dienst.");
 		alert.show();
 		
 	}
