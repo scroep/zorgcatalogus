@@ -16,16 +16,12 @@ public class GemeenteRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	@PostConstruct
-	public void init() {
-		//jdbcTemplate.execute("set schema 'zorgcatalogus'");
-	}
-	
 	public List<Gemeente> findAll(){
-		jdbcTemplate.execute("set schema 'zorgcatalogus'");
+		jdbcTemplate.execute("set schema 'zorgcatalogus';");
 
-		List<Gemeente> gemeentes = jdbcTemplate.query("Select * from gemeente", (rs, rowNum) -> new Gemeente(rs.getInt("gemeente_code"),
-				rs.getString("gemeente_naam"),rs.getBoolean("is_actief")
+		List<Gemeente> gemeentes = jdbcTemplate.query(
+				"SELECT * FROM gemeente",
+				(rs, rowNum) -> new Gemeente(rs.getInt("gemeente_code"), rs.getString("gemeente_naam"), rs.getBoolean("is_actief")
 			));
 		
 		return gemeentes;	

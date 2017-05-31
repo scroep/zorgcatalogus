@@ -11,17 +11,15 @@ import nl.wizardit.zorgcatalogus.repositories.GemeenteRepository;
 
 @RestController
 public class GemeenteController {
- 
+
 	@Autowired
 	private GemeenteRepository gemeenteRepository;
-	
-	
-	
-	@RequestMapping("/sjoerd")
-	public List<Gemeente> getAllgemeentes(){
+
+	@RequestMapping("/zorgcatalogus/gemeente")
+	public List<Gemeente> getAllgemeentes() {
 		List<Gemeente> gemeenten = gemeenteRepository.findAll();
 		System.out.println("gemeente controller" + gemeenteRepository);
 		return gemeenten;
-}
+	}
 
 }
