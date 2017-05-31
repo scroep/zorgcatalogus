@@ -27,23 +27,26 @@ public class ProductDienstInformatieController {
 	private ProductDienstModel productDienstModel;
 	
 	
-	public void setProductDienstCode(int code){
-		this.productDienstCode = code;
+	public void setProductDienstCode(int productDienstCode) {
+		this.productDienstCode = productDienstCode;
 	}
 	
-	
-	public void vulInformatieIn(){
+	/**
+	 * 
+	 * @return True is successful, false if unsuccessful.
+	 */
+	public boolean vulInformatieIn() {
         productDienstModel = new ProductDienstModel();
-		
 		ProductDienst productDienst = productDienstModel.getProductDienst(productDienstCode);
 		
-		codeResultaat.setText(""+productDienstCode);
-		categorieCodeResultaat.setText(""+productDienst.getCategorieCode());
+		if (productDienst == null)
+			return false;
+		
+		codeResultaat.setText(Integer.toString(productDienstCode));
+		categorieCodeResultaat.setText(Integer.toString(productDienst.getCategorieCode()));
 		naamResultaat.setText(productDienst.getProductDienstNaam());
 		omschrijvingResultaat.setText(productDienst.getProductDienstOmschrijving());
 		
-		
+		return true;
 	}
-	
-	
 }

@@ -16,29 +16,42 @@ import javafx.stage.Stage;
 
 @Component
 public class ProductDienstCodeInvullenController {
-	
+
 	@FXML
 	private TextField invoerVak;
-	
+
 	@FXML
 	private Button zoekKnop;
-	
-	
-	public void zoekKnop_click(ActionEvent event) throws IOException{
+
+	public void zoekKnop_click(ActionEvent event) throws IOException {
 		((Node) event.getSource()).getScene().getWindow().hide();
-		 Stage stage = new Stage();
-		 FXMLLoader  loader = new FXMLLoader();
-		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductDienstInformatie.fxml").openStream());
-		 ProductDienstInformatieController productDienstInformatieController = (ProductDienstInformatieController) loader.getController();
-		 productDienstInformatieController.setProductDienstCode(Integer.parseInt(invoerVak.getText()));
-		 productDienstInformatieController.vulInformatieIn();
-		 Scene scene = new Scene(rootNode);
-		 stage.setScene(scene);
-	     stage.show();
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/ProductDienstInformatie.fxml").openStream());
+		ProductDienstInformatieController productDienstInformatieController = (ProductDienstInformatieController) loader.getController();
+
+		try {
+			int productCode;
+			productCode = Integer.parseInt(invoerVak.getText());
+			
+			productDienstInformatieController.setProductDienstCode(productCode);
+			
+			if (!productDienstInformatieController.vulInformatieIn()) {
+				System.err.println("Product bestaat niet!");
+				// TODO: Product bestaat niet.
+			}
+			
+			Scene scene = new Scene(rootNode);
+			stage.setScene(scene);
+			stage.show();
+
+		} catch (NumberFormatException e) {
+			System.err.println("Ongeldige invoer!");
+			// TODO: Ongeldige invoer. Gebruik nummers.
+		}
+
 		
+
 	}
-	
-	
-	
 
 }
