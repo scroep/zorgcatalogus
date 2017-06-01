@@ -23,13 +23,15 @@ public class ProductDienstRepository {
 		try {
 			jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
 			
+			
 			productDienst = (ProductDienst) jdbcTemplate.queryForObject(
-					"SELECT * FROM product_dienst WHERE product_dienst_code = ?",
+					"SELECT * FROM sp_zoek_product_met_product_code(?); ",
 					new Object[] {productDienstCode}, new ProductDienstRowMapper());
+					
 			
 		} catch (DataAccessException e) {}
 		
-		return productDienst;
+		return productDienst ;
 	}
 
 	
