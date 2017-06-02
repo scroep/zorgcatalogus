@@ -21,8 +21,7 @@ public class GemeenteRepository {
 
 		List<Gemeente> gemeentes = jdbcTemplate.query(
 				"SELECT * FROM gemeente",
-				(rs, rowNum) -> new Gemeente(rs.getInt("gemeente_code"), rs.getString("gemeente_naam"), rs.getBoolean("is_actief")
-			));
+				(rs, rowNum) -> new Gemeente(rs.getInt("gemeente_code"), rs.getString("gemeente_naam")));
 		
 		return gemeentes;	
 	}

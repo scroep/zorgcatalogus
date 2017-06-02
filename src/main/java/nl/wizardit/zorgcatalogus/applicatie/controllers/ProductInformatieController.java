@@ -15,10 +15,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import nl.wizardit.zorgcatalogus.applicatie.models.ProductDienstModel;
-import nl.wizardit.zorgcatalogus.domein.ProductDienst;
+import nl.wizardit.zorgcatalogus.applicatie.models.ProductModel;
+import nl.wizardit.zorgcatalogus.domein.Product;
 
-public class ProductDienstInformatieController {
+public class ProductInformatieController {
 	
 	@FXML
 	private TextField codeResultaat;
@@ -30,15 +30,15 @@ public class ProductDienstInformatieController {
 	private TextField naamResultaat;
 	
 	@FXML
-	private TextArea omschrijvingResultaat;
+	private TextField eenheidResultaat;
 	
-	private int productDienstCode;
+	private int productCode;
 	
-	private ProductDienstModel productDienstModel;
+	private ProductModel productModel;
 	
 	
-	public void setProductDienstCode(int productDienstCode) {
-		this.productDienstCode = productDienstCode;
+	public void setProductDienstCode(int productCode) {
+		this.productCode = productCode;
 	}
 	
 	/**
@@ -46,16 +46,16 @@ public class ProductDienstInformatieController {
 	 * @return True is successful, false if unsuccessful.
 	 */
 	public boolean vulInformatieIn() {
-        productDienstModel = new ProductDienstModel();
-		ProductDienst productDienst = productDienstModel.getProductDienst(productDienstCode);
+        productModel = new ProductModel();
+		Product product = productModel.getProduct(productCode);
 		
-		if (productDienst == null)
+		if (product == null)
 			return false;
 		
-		codeResultaat.setText(Integer.toString(productDienstCode));
-		categorieCodeResultaat.setText(Integer.toString(productDienst.getCategorieCode()));
-		naamResultaat.setText(productDienst.getProductDienstNaam());
-		omschrijvingResultaat.setText(productDienst.getProductDienstOmschrijving());
+		codeResultaat.setText(Integer.toString(productCode));
+		categorieCodeResultaat.setText(Integer.toString(product.getCategorieCode()));
+		naamResultaat.setText(product.getProductNaam());
+		eenheidResultaat.setText(product.getProductEenheid());
 		
 		return true;
 	}
@@ -65,7 +65,7 @@ public class ProductDienstInformatieController {
 		((Node) event.getSource()).getScene().getWindow().hide();
 		 Stage stage = new Stage();
 		 FXMLLoader  loader = new FXMLLoader();
-		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductDienstCodeInvullen.fxml").openStream());
+		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductCodeInvullen.fxml").openStream());
 		 Scene scene = new Scene(rootNode);
 		 stage.setScene(scene);
 	     stage.show();

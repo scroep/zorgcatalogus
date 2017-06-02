@@ -6,18 +6,16 @@ import org.springframework.stereotype.Component;
 public class Gemeente {
 	private int gemeenteCode;
 	private String gemeenteNaam;
-	private boolean isActief;
 	
 	
 	public Gemeente(){
 		
 	}
 	
-	public Gemeente(int gemeenteCode, String gemeenteNaam, boolean isActief) {
+	public Gemeente(int gemeenteCode, String gemeenteNaam) {
 		super();
 		this.gemeenteCode = gemeenteCode;
 		this.gemeenteNaam = gemeenteNaam;
-		this.isActief = isActief;
 	}
 
 
@@ -33,13 +31,4 @@ public class Gemeente {
 	public void setGemeenteNaam(String gemeenteNaam) {
 		this.gemeenteNaam = gemeenteNaam;
 	}
-	public boolean isActief() {
-		return isActief;
-	}
-	public void setActief(boolean isActief) {
-		this.isActief = isActief;
-	}
-	
-	
-
 }

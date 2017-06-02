@@ -34,8 +34,7 @@ public class GemeenteBeherenController implements Initializable  {
 	private TableColumn<?,?> gemeenteCode;
 	@FXML
 	private TableColumn<?,?> gemeenteNaam;
-	@FXML
-	private TableColumn<?,?> isActief;
+	
 	
 	public ObservableList<Gemeente> data = FXCollections.observableArrayList();
 	
@@ -51,7 +50,6 @@ public class GemeenteBeherenController implements Initializable  {
 	
 		gemeenteCode.setCellValueFactory(new PropertyValueFactory<>("gemeenteCode"));
 		gemeenteNaam.setCellValueFactory(new PropertyValueFactory<>("gemeenteNaam"));
-		isActief.setCellValueFactory(new PropertyValueFactory<>("isActief"));
 		
 	
 		data.addAll(gemeenteModel.getAlleGemeentes());

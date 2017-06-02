@@ -5,33 +5,34 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import nl.wizardit.zorgcatalogus.domein.ProductDienst;
+import nl.wizardit.zorgcatalogus.domein.Product;
 
 
 
 @Repository
-public class ProductDienstRepository {
+public class ProductRepository {
 
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	@SuppressWarnings({ "unchecked"})
-	public ProductDienst getProductDienst(int productDienstCode) {
-		ProductDienst productDienst = null;
+	public Product getProduct(int productCode) {
+		Product product = null;
 		
 		try {
 			jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
 			
 			
-			productDienst = (ProductDienst) jdbcTemplate.queryForObject(
-					"SELECT * FROM sp_zoek_product_met_product_code(?); ",
-					new Object[] {productDienstCode}, new ProductDienstRowMapper());
+			product = (Product) jdbcTemplate.queryForObject(
+					"SELECT * FROM sp_zoek_product(?); ",
+					new Object[] {productCode}, new ProductRowMapper());
 					
+			System.out.println(product);
 			
 		} catch (DataAccessException e) {}
 		
-		return productDienst ;
+		return product;
 	}
 
 	

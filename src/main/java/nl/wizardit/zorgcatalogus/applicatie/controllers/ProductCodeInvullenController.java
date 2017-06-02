@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 @Component
-public class ProductDienstCodeInvullenController {
+public class ProductCodeInvullenController {
 
 	@FXML
 	private TextField invoerVak;
@@ -28,17 +28,17 @@ public class ProductDienstCodeInvullenController {
 	public void zoekKnop_click(ActionEvent event) throws IOException {
 		
 		FXMLLoader loader = new FXMLLoader();
-		Parent rootNode = loader.load(getClass().getResource("/fxml/ProductDienstInformatie.fxml").openStream());
-		ProductDienstInformatieController productDienstInformatieController = (ProductDienstInformatieController) loader.getController();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/ProductInformatie.fxml").openStream());
+		ProductInformatieController productInformatieController = (ProductInformatieController) loader.getController();
 
 
 		try {
 			int productCode;
 			productCode = Integer.parseInt(invoerVak.getText());
 			
-			productDienstInformatieController.setProductDienstCode(productCode);
+			productInformatieController.setProductDienstCode(productCode);
 			
-			if (!productDienstInformatieController.vulInformatieIn()) {
+			if (!productInformatieController.vulInformatieIn()) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Product bestaat niet");
 				alert.setContentText("De ingevoerde productcode komt niet overeen met een product");

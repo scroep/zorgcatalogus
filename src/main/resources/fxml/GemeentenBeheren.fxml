@@ -7,21 +7,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="508.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.GemeenteBeherenController">
+<AnchorPane prefHeight="505.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.GemeenteBeherenController">
    <children>
-      <Label layoutX="65.0" layoutY="28.0" text="Gemeenten beheren">
+      <Label layoutX="45.0" layoutY="29.0" text="Gemeenten beheren">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="94.0" layoutY="125.0" prefHeight="220.0" prefWidth="369.0">
+      <TableView fx:id="table" layoutX="106.0" layoutY="124.0" prefHeight="229.0" prefWidth="282.0">
         <columns>
-          <TableColumn fx:id="gemeenteCode" prefWidth="107.0" text="GemeenteCode" />
-          <TableColumn fx:id="gemeenteNaam" prefWidth="161.0" text="Gemeente naam" />
-            <TableColumn fx:id="isActief" prefWidth="99.0" text="is Actief" />
+          <TableColumn fx:id="gemeenteCode" prefWidth="121.0" text="GemeenteCode" />
+          <TableColumn fx:id="gemeenteNaam" prefWidth="158.0" text="Gemeente naam" />
         </columns>
       </TableView>
-      <Button layoutX="348.0" layoutY="432.0" mnemonicParsing="false" text="Gemeente toevoegen" />
-      <Button layoutX="171.0" layoutY="432.0" mnemonicParsing="false"  text="Gemeente verwijderen" />
+      <Button layoutX="272.0" layoutY="419.0" mnemonicParsing="false" text="Gemeente toevoegen" />
+      <Button layoutX="67.0" layoutY="419.0" mnemonicParsing="false" text="Gemeente verwijderen" />
    </children>
 </AnchorPane>

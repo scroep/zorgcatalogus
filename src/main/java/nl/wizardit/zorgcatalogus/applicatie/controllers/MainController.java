@@ -29,7 +29,7 @@ public class MainController {
 		((Node) event.getSource()).getScene().getWindow().hide();
 		 Stage stage = new Stage();
 		 FXMLLoader  loader = new FXMLLoader();
-		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductDienstCodeInvullen.fxml").openStream());
+		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductCodeInvullen.fxml").openStream());
 		 Scene scene = new Scene(rootNode);
 		 stage.setScene(scene);
 	     stage.show();
