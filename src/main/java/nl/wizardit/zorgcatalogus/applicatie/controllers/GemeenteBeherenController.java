@@ -40,7 +40,6 @@ public class GemeenteBeherenController implements Initializable  {
 	
 	
 	public GemeenteBeherenController(){
-		System.out.println("constructoooor");
 
 
 	}

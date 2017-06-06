@@ -32,12 +32,16 @@ public class ProductInformatieController {
 	@FXML
 	private TextField eenheidResultaat;
 	
+	@FXML
+	private TextField gc_invoer;
+	
+	
 	private int productCode;
 	
 	private ProductModel productModel;
 	
 	
-	public void setProductDienstCode(int productCode) {
+	public void setProductCode(int productCode) {
 		this.productCode = productCode;
 	}
 	
@@ -72,10 +76,43 @@ public class ProductInformatieController {
 	}
 	
 	public void toonContracten(ActionEvent event) throws IOException{
-		Alert alert = new Alert(AlertType.WARNING);
-		alert.setTitle("Geen contracten");
-		alert.setContentText("Er zijn geen contracten gevonden voor het product of dienst.");
-		alert.show();
+		
+		
+		FXMLLoader loader = new FXMLLoader();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/ContractenOverzicht.fxml").openStream());
+		ContractenOverzichtController contractenOverzichtController = (ContractenOverzichtController) loader.getController();
+		
+		try{
+			int gemeenteCode;
+			gemeenteCode = Integer.parseInt(gc_invoer.getText());
+			
+			contractenOverzichtController.setCodes(productCode, gemeenteCode);
+			
+			
+			if(!contractenOverzichtController.vulTabel()){
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Geen contracten");
+				alert.setContentText("Er zijn geen contracten gevonden voor het product");
+				alert.show();
+			}
+			
+		}catch (NumberFormatException e){
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Ongeldige invoer");
+			alert.setContentText("De invoer is ongeldig. Gebruik een nummer.");
+			alert.showAndWait();
+			return;
+		}
+		
+
+		((Node) event.getSource()).getScene().getWindow().hide();
+		Stage stage = new Stage();
+	
+	    Scene scene = new Scene(rootNode);
+	    stage.setScene(scene);
+        stage.show();
+		
+		
 		
 	}
 }

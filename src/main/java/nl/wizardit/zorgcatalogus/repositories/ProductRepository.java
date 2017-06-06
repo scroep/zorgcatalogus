@@ -27,9 +27,6 @@ public class ProductRepository {
 			product = (Product) jdbcTemplate.queryForObject(
 					"SELECT * FROM sp_zoek_product(?); ",
 					new Object[] {productCode}, new ProductRowMapper());
-					
-			System.out.println(product);
-			
 		} catch (DataAccessException e) {}
 		
 		return product;

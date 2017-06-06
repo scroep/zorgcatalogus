@@ -35,4 +35,15 @@ public class MainController {
 	     stage.show();
 	}
 	
+	
+	public void contractenBeherenKnop_click(ActionEvent event) throws IOException{
+	((Node) event.getSource()).getScene().getWindow().hide();
+	 Stage stage = new Stage();
+	 FXMLLoader  loader = new FXMLLoader();
+	 Parent rootNode  = loader.load(getClass().getResource("/fxml/ContractenBeheren.fxml").openStream());
+	 Scene scene = new Scene(rootNode);
+	 stage.setScene(scene);
+     stage.show();	 
+	}
+	
 }

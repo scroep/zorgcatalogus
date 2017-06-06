@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.ContractenOverzichtController">
+   <children>
+      <Label layoutX="52.0" layoutY="64.0" text="Contracten overzicht:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TableView fx:id="contractenTabel" layoutX="44.0" layoutY="150.0" prefHeight="200.0" prefWidth="394.0">
+        <columns>
+          <TableColumn fx:id="productCode" prefWidth="95.0" text="Product code" />
+          <TableColumn fx:id="groepCode" prefWidth="78.0" text="Groep code" />
+            <TableColumn fx:id="agbCode" prefWidth="75.0" text="AGB code" />
+            <TableColumn fx:id="startDatum" prefWidth="136.0" text="Start datum" />
+        </columns>
+      </TableView>
+      <Button layoutX="360.0" layoutY="396.0" mnemonicParsing="false" onAction="#detailsKnop_click" text="Details" />
+      <Button layoutX="15.0" layoutY="24.0" mnemonicParsing="false" onAction="#terugKnop_click" text="Terug" />
+   </children>
+</AnchorPane>

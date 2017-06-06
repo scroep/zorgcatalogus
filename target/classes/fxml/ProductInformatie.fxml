@@ -23,5 +23,7 @@
       <Button layoutX="318.0" layoutY="335.0" mnemonicParsing="false" onAction="#toonContracten" text="Zoek contracten" />
       <Button layoutX="25.0" layoutY="35.0" mnemonicParsing="false" onAction="#terugKnop_click" text="Terug" />
       <TextField fx:id="eenheidResultaat" layoutX="159.0" layoutY="228.0" prefHeight="27.0" prefWidth="229.0" />
+      <TextField fx:id="gc_invoer" layoutX="99.0" layoutY="335.0" prefHeight="27.0" prefWidth="87.0" />
+      <Label layoutX="87.0" layoutY="308.0" text="gemeente code:" />
    </children>
 </AnchorPane>

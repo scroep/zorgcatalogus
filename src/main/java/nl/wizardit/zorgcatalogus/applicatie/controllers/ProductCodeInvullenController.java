@@ -36,7 +36,7 @@ public class ProductCodeInvullenController {
 			int productCode;
 			productCode = Integer.parseInt(invoerVak.getText());
 			
-			productInformatieController.setProductDienstCode(productCode);
+			productInformatieController.setProductCode(productCode);
 			
 			if (!productInformatieController.vulInformatieIn()) {
 				Alert alert = new Alert(AlertType.ERROR);

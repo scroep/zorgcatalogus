@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import nl.wizardit.zorgcatalogus.applicatie.controllers.MainController;
 
+
 @SpringBootApplication
 @ImportResource("classpath:beans.xml")
 public class ZorgcatalogusApplication extends Application{
@@ -38,7 +39,7 @@ public class ZorgcatalogusApplication extends Application{
 	    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
 	    fxmlLoader.setControllerFactory(springContext::getBean);
 	    rootNode = fxmlLoader.load();
-
+	    
 	}
 
 	@Override
