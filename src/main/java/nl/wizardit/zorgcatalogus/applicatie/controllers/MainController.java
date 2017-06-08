@@ -25,22 +25,22 @@ public class MainController {
 	}
 	
 	
-	public void productDienstZoekenKnop_Click(ActionEvent event) throws IOException{
+	public void ZorgbehoefteSysteemKnop_Click(ActionEvent event) throws IOException{
 		((Node) event.getSource()).getScene().getWindow().hide();
 		 Stage stage = new Stage();
 		 FXMLLoader  loader = new FXMLLoader();
-		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ProductCodeInvullen.fxml").openStream());
+		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ZorgbehoefteSysteemScherm.fxml").openStream());
 		 Scene scene = new Scene(rootNode);
 		 stage.setScene(scene);
 	     stage.show();
 	}
 	
 	
-	public void contractenBeherenKnop_click(ActionEvent event) throws IOException{
+	public void beherenKnop_click(ActionEvent event) throws IOException{
 	((Node) event.getSource()).getScene().getWindow().hide();
 	 Stage stage = new Stage();
 	 FXMLLoader  loader = new FXMLLoader();
-	 Parent rootNode  = loader.load(getClass().getResource("/fxml/ContractenBeheren.fxml").openStream());
+	 Parent rootNode  = loader.load(getClass().getResource("/fxml/BeherenScherm.fxml").openStream());
 	 Scene scene = new Scene(rootNode);
 	 stage.setScene(scene);
      stage.show();	 

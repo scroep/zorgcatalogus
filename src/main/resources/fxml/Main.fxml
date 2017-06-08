@@ -7,13 +7,13 @@
 
 <AnchorPane prefHeight="393.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.MainController">
    <children>
-      <Button layoutX="196.0" layoutY="158.0" mnemonicParsing="false" onAction="#contractenBeherenKnop_click" prefHeight="65.0" prefWidth="175.0" text="Contracten beheren" />
+      <Button layoutX="196.0" layoutY="158.0" mnemonicParsing="false" onAction="#beherenKnop_click" prefHeight="65.0" prefWidth="175.0" text="Beheren" />
       <ImageView fitHeight="122.0" fitWidth="119.0" layoutX="26.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="196.0" layoutY="76.0" mnemonicParsing="false" onAction="#productDienstZoekenKnop_Click" prefHeight="65.0" prefWidth="175.0" text="Product/dienst zoeken" />
-      <Button layoutX="196.0" layoutY="243.0" mnemonicParsing="false" onAction="#gemeenteBeherenKnop_click" prefHeight="65.0" prefWidth="175.0" text="Gemeenten beheren" />
+      <Button layoutX="196.0" layoutY="76.0" mnemonicParsing="false" onAction="#ZorgbehoefteSysteemKnop_Click" prefHeight="65.0" prefWidth="175.0" text="Zorgbehoefte Systeem" />
+      <Button layoutX="196.0" layoutY="243.0" mnemonicParsing="false" onAction="#gemeenteBeherenKnop_click" prefHeight="65.0" prefWidth="175.0" text="Gemeenten" />
    </children>
 </AnchorPane>
