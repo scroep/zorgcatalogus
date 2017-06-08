@@ -14,36 +14,34 @@ import javafx.stage.Stage;
 @Component
 public class MainController {
 
-	public void gemeenteBeherenKnop_click(ActionEvent event) throws IOException{
-	((Node) event.getSource()).getScene().getWindow().hide();
-	 Stage stage = new Stage();
-	 FXMLLoader  loader = new FXMLLoader();
-	 Parent rootNode  = loader.load(getClass().getResource("/fxml/GemeentenBeheren.fxml").openStream());
-	 Scene scene = new Scene(rootNode);
-	 stage.setScene(scene);
-     stage.show();	 
-	}
-	
-	
-	public void ZorgbehoefteSysteemKnop_Click(ActionEvent event) throws IOException{
+	public void gemeenteBeherenKnop_click(ActionEvent event) throws IOException {
 		((Node) event.getSource()).getScene().getWindow().hide();
-		 Stage stage = new Stage();
-		 FXMLLoader  loader = new FXMLLoader();
-		 Parent rootNode  = loader.load(getClass().getResource("/fxml/ZorgbehoefteSysteemScherm.fxml").openStream());
-		 Scene scene = new Scene(rootNode);
-		 stage.setScene(scene);
-	     stage.show();
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/GemeentenBeheren.fxml").openStream());
+		Scene scene = new Scene(rootNode);
+		stage.setScene(scene);
+		stage.show();
 	}
-	
-	
-	public void beherenKnop_click(ActionEvent event) throws IOException{
-	((Node) event.getSource()).getScene().getWindow().hide();
-	 Stage stage = new Stage();
-	 FXMLLoader  loader = new FXMLLoader();
-	 Parent rootNode  = loader.load(getClass().getResource("/fxml/BeherenScherm.fxml").openStream());
-	 Scene scene = new Scene(rootNode);
-	 stage.setScene(scene);
-     stage.show();	 
+
+	public void ZorgbehoefteSysteemKnop_Click(ActionEvent event) throws IOException {
+		((Node) event.getSource()).getScene().getWindow().hide();
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/ZorgbehoefteSysteemScherm.fxml").openStream());
+		Scene scene = new Scene(rootNode);
+		stage.setScene(scene);
+		stage.show();
 	}
-	
+
+	public void beherenKnop_click(ActionEvent event) throws IOException {
+		((Node) event.getSource()).getScene().getWindow().hide();
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/BeherenScherm.fxml").openStream());
+		Scene scene = new Scene(rootNode);
+		stage.setScene(scene);
+		stage.show();
+	}
+
 }

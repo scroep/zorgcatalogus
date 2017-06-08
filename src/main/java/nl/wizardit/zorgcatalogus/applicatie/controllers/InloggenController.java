@@ -15,6 +15,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import nl.wizardit.zorgcatalogus.ZorgcatalogusApplication;
 
 @Component
 public class InloggenController {
@@ -28,8 +29,20 @@ public class InloggenController {
 	public void inloggen_click(ActionEvent event) throws IOException {
 		
 		System.out.println(textField_gebruikersnaam.getText() + "   " + textField_wachtwoord.getText());
-
+		
+		String gebruikersnaam = textField_gebruikersnaam.getText();
+		String wachtwoord = textField_wachtwoord.getText();
+		
+		ZorgcatalogusApplication.createSpringContext(gebruikersnaam, wachtwoord);
+		
+		
+		((Node) event.getSource()).getScene().getWindow().hide();
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		Parent rootNode = loader.load(getClass().getResource("/fxml/Main.fxml").openStream());
+		Scene scene = new Scene(rootNode);
+		stage.setScene(scene);
+		stage.show();
 	}
 	
-
 }
