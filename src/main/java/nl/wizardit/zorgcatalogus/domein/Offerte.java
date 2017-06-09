@@ -10,7 +10,7 @@ public class Offerte {
 	private String offerteSamenvating;
 	private String offerteUitleg;
 	private Date offerteGeldigTot;
-	private byte[] offerteDocument;
+	public byte[] offerteDocument;
 	
    public Offerte(){
 	   

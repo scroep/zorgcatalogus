@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.AannemersOverzichtController">
    <children>
       <Label layoutX="157.0" layoutY="56.0" text="Aannemers">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
-      <TableView layoutX="85.0" layoutY="141.0" prefHeight="193.0" prefWidth="337.0">
+      <TableView fx:id="aannemersTabel" layoutX="43.0" layoutY="139.0" prefHeight="195.0" prefWidth="423.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="kvkNummer" prefWidth="103.0" text="KVK nummer" />
+            <TableColumn fx:id="aNaam" prefWidth="77.0" text="Naam" />
+            <TableColumn fx:id="aTelefoonnummer" prefWidth="124.0" text="Telefoonnummer" />
+          <TableColumn fx:id="eerderIngehuurd" prefWidth="115.0" text="eerder Ingehuurd" />
         </columns>
       </TableView>
+      <Button layoutX="337.0" layoutY="383.0" mnemonicParsing="false" onAction="#offerteAanmakenKnop_klik" text="Offerte aanmaken" />
    </children>
 </AnchorPane>

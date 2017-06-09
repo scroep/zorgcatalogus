@@ -16,7 +16,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import nl.wizardit.zorgcatalogus.applicatie.models.ProductModel;
+import nl.wizardit.zorgcatalogus.applicatie.models.VoorraadModel;
 import nl.wizardit.zorgcatalogus.domein.Product;
+import nl.wizardit.zorgcatalogus.domein.Voorraad;
 
 public class ProductInformatieController {
 	
@@ -33,12 +35,20 @@ public class ProductInformatieController {
 	private TextField eenheidResultaat;
 	
 	@FXML
+	private TextField aantalResultaat;
+	
+	@FXML
+	private TextArea omschrijvingResultaat;
+	
+	@FXML
 	private TextField gc_invoer;
 	
 	
 	private int productCode;
 	
 	private ProductModel productModel;
+	
+	private VoorraadModel voorraadModel;
 	
 	
 	public void setProductCode(int productCode) {
@@ -60,6 +70,15 @@ public class ProductInformatieController {
 		categorieCodeResultaat.setText(Integer.toString(product.getCategorieCode()));
 		naamResultaat.setText(product.getProductNaam());
 		eenheidResultaat.setText(product.getProductEenheid());
+		
+		voorraadModel = new VoorraadModel();
+		
+		Voorraad voorraad = voorraadModel.getVoorraad(1, productCode);
+		if(voorraad != null){
+			aantalResultaat.setText(""+voorraad.getVoorraadAantal());
+			omschrijvingResultaat.setText(voorraad.getVoorraadOmschrijving());
+			
+		}
 		
 		return true;
 	}

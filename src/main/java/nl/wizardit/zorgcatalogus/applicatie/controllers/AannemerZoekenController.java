@@ -1,5 +1,7 @@
 package nl.wizardit.zorgcatalogus.applicatie.controllers;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,24 +18,24 @@ public class AannemerZoekenController {
 	@FXML
 	private TextField specialiteitCode;
 	
-	public void zoekKnop_click(ActionEvent event){
+	public void zoekKnop_click(ActionEvent event) throws IOException{
 		
 		
 		FXMLLoader loader = new FXMLLoader();
-		//Parent rootNode = loader.load(getClass().getResource("/fxml/AannemersOverzicht.fxml").openStream());
+		Parent rootNode = loader.load(getClass().getResource("/fxml/AannemersOverzicht.fxml").openStream());
 		AannemersOverzichtController  aannemersOverzichtController = (AannemersOverzichtController) loader.getController();
 
-/*
+
 		try {
 			int specialiteitcode;
 			specialiteitcode = Integer.parseInt(specialiteitCode.getText());
 			
 			aannemersOverzichtController.setSpecialiteitCode(specialiteitcode);
 			
-			if (!productInformatieController.vulInformatieIn()) {
+			if (!aannemersOverzichtController.vulInformatieIn()) {
 				Alert alert = new Alert(AlertType.ERROR);
-				alert.setTitle("Product bestaat niet");
-				alert.setContentText("De ingevoerde productcode komt niet overeen met een product");
+				alert.setTitle("Er zijn geen Aannamers gevonden");
+				alert.setContentText("Er zijn geen Aannamers gevonden");
 				alert.showAndWait();
 				return;
 			}
@@ -53,7 +55,7 @@ public class AannemerZoekenController {
 		Scene scene = new Scene(rootNode);
 		stage.setScene(scene);
 		stage.show();
-		*/
+		
 	}
 	
 	

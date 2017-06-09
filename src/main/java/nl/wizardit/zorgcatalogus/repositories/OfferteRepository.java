@@ -1,5 +1,6 @@
 package nl.wizardit.zorgcatalogus.repositories;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,18 @@ public class OfferteRepository {
 		   } catch (DataAccessException e) {}
 		  
 		  return offertes;
+		  
+	  }
+	  
+	  
+	  public void offerteOpslaan(Offerte offerte) {
+		  
+		 try{
+			jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
+			jdbcTemplate.update("SELECT sp_offerte_aanmaken(?,?,?,?);", new Object[]{offerte.getGemeenteCode(), offerte.getAannemerKvkNummer(),offerte.getOfferteTitel(), offerte.getOfferteGeldigTot()});
+
+		 }catch (DataAccessException e) {}
+		  
 		  
 	  }
 	  
