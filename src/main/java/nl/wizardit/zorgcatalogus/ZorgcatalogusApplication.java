@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import nl.wizardit.zorgcatalogus.repositories.GebruikerRepository.Gebruikersfunctie;
 
 @SpringBootApplication
 @ImportResource("classpath:beans.xml")
@@ -18,6 +19,9 @@ public class ZorgcatalogusApplication extends Application {
 
 	private static ConfigurableApplicationContext springContext;
 	private static Parent rootNode;
+	
+	private static Gebruikersfunctie gebruikersfunctie = Gebruikersfunctie.ONBEKEND;
+	private static int gemeentecode = -1;
 
 	public static void main(String[] args) {
 		Application.launch(args);
@@ -28,8 +32,8 @@ public class ZorgcatalogusApplication extends Application {
 		
 		springBuilder.properties(
 				"spring.datasource.url=jdbc:postgresql://localhost/zorgcatalogus",
-				"spring.datasource.username=postgres",
-				"spring.datasource.password=jjmf7FVVJ8QqJqHn",
+				"spring.datasource.username=" + gebruikersnaam.toLowerCase(),
+				"spring.datasource.password=" + wachtwoord,
 				"spring.datasource.driver-class-name=org.postgresql.Driver"
 				);
 		
@@ -37,6 +41,19 @@ public class ZorgcatalogusApplication extends Application {
 			springContext.close();
 		
 		springContext = springBuilder.run();
+	}
+	
+	public static Gebruikersfunctie getGebruikersfunctie() {
+		return gebruikersfunctie;
+	}
+	
+	public static int getGemeentecode() {
+		return gemeentecode;
+	}
+	
+	public static void setGebruikersInfo(Gebruikersfunctie gebruikersfunctie, int gemeentecode) {
+		ZorgcatalogusApplication.gebruikersfunctie = gebruikersfunctie;
+		ZorgcatalogusApplication.gemeentecode = gemeentecode;
 	}
 
 	@Override
@@ -55,5 +72,8 @@ public class ZorgcatalogusApplication extends Application {
 	public void stop() throws Exception {
 		if (springContext != null)
 			springContext.close();
+		
+		gebruikersfunctie = Gebruikersfunctie.ONBEKEND;
+		gemeentecode = -1;
 	}
 }
