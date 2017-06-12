@@ -28,5 +28,10 @@ public class ContractModel {
 		return contracten;
 		
 	}
+	
+	public void voegContractToe(Contract contract){
+		Contract toegevoegdecontract = restTemplate.postForObject("http://localhost:8080/zorgcatalogus/contract/toevoegen", contract, Contract.class);
+		System.out.println("contract is toegevoegd" + toegevoegdecontract.getContractBeschrijving());
+	}
 
 }

@@ -22,7 +22,7 @@
             <TableColumn fx:id="startDatum" prefWidth="109.0" text="Start Datum" />
         </columns>
       </TableView>
-      <Button layoutX="279.0" layoutY="405.0" mnemonicParsing="false" text="Contract toevoegen" />
+      <Button layoutX="279.0" layoutY="405.0" mnemonicParsing="false" onAction="#contractToevoegenKnop_klik" text="Contract toevoegen" />
       <Button layoutX="23.0" layoutY="56.0" mnemonicParsing="false" onAction="#terugKnop_klik" text="Terug" />
    </children>
 </AnchorPane>
