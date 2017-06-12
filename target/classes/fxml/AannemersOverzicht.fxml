@@ -23,5 +23,6 @@
         </columns>
       </TableView>
       <Button layoutX="337.0" layoutY="383.0" mnemonicParsing="false" onAction="#offerteAanmakenKnop_klik" text="Offerte aanmaken" />
+      <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#terugKnop_klik" text="Terug" />
    </children>
 </AnchorPane>

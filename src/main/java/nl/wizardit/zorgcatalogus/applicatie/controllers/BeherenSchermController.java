@@ -24,5 +24,15 @@ public class BeherenSchermController {
 	}
 	
 	
+	public void terugNaarHoofdSchermKnop_klik(ActionEvent event) throws IOException{
+		((Node) event.getSource()).getScene().getWindow().hide();
+		 Stage stage = new Stage();
+		 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
+		 Parent rootNode = fxmlLoader.load();
+		 Scene scene = new Scene(rootNode);
+		 stage.setScene(scene);
+	     stage.show();
+	}
+	
 
 }

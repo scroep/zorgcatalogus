@@ -16,5 +16,6 @@
          </font>
       </Label>
       <Label layoutX="120.0" layoutY="183.0" />
+      <Button layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#terugKnop_klik" text="Terug " />
    </children>
 </AnchorPane>

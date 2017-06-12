@@ -8,5 +8,6 @@
       <Button layoutX="127.0" layoutY="49.0" mnemonicParsing="false" onAction="#contractenBeherenKnop_click" prefHeight="83.0" prefWidth="146.0" text="Contracten" />
       <Button layoutX="127.0" layoutY="162.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="146.0" text="Aannemers" />
       <Button layoutX="127.0" layoutY="270.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="146.0" text="Leveranciers" />
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#terugNaarHoofdSchermKnop_klik" text="Terug" />
    </children>
 </AnchorPane>

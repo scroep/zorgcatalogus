@@ -36,15 +36,15 @@ public class ContractRepository {
 	  }
 	
 	@SuppressWarnings("unchecked")
-	public List<Contract> getAlleContracten(){
+	public List<Contract> getAlleContracten(int gemeenteCode){
 		List<Contract> contracten = null;
 		
 		try {
 			jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
 
 			contracten = (List<Contract>)jdbcTemplate.query(
-					"select * from contract"
-					,new ContractRowMapper());
+					"select * from sp_zoek_contracten(?)"
+					,new Object[]{gemeenteCode},new ContractRowMapper());
 		
 			
 		     } catch (DataAccessException e) {}

@@ -21,9 +21,9 @@ public class ContractModel {
 		return contracten;
 	}
 	
-	public Contract[] getAlleContracten(){
+	public Contract[] getAlleContracten(int gemeenteCode){
 		
-		Contract[] contracten = restTemplate.getForObject("http://localhost:8080/zorgcatalogus/contract", Contract[].class);
+		Contract[] contracten = restTemplate.getForObject("http://localhost:8080/zorgcatalogus/contract/{gemeentecode}", Contract[].class, gemeenteCode);
 		
 		return contracten;
 		

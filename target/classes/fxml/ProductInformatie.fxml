@@ -24,8 +24,6 @@
       <Button layoutX="293.0" layoutY="444.0" mnemonicParsing="false" onAction="#toonContracten" text="Zoek contracten" />
       <Button layoutX="25.0" layoutY="35.0" mnemonicParsing="false" onAction="#terugKnop_click" text="Terug" />
       <TextField fx:id="eenheidResultaat" editable="false" layoutX="159.0" layoutY="228.0" prefHeight="27.0" prefWidth="229.0" />
-      <TextField fx:id="gc_invoer" layoutX="140.0" layoutY="444.0" prefHeight="27.0" prefWidth="87.0" />
-      <Label layoutX="134.0" layoutY="417.0" text="gemeente code:" />
       <Label layoutX="50.0" layoutY="312.0" text="Aantal:" />
       <Label layoutX="50.0" layoutY="347.0" prefHeight="17.0" prefWidth="139.0" text="Omschrijving:" />
       <TextField fx:id="aantalResultaat" editable="false" layoutX="159.0" layoutY="307.0" prefHeight="27.0" prefWidth="229.0" />

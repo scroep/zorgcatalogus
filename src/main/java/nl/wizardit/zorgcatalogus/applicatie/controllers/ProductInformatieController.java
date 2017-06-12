@@ -15,6 +15,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import nl.wizardit.zorgcatalogus.ZorgcatalogusApplication;
 import nl.wizardit.zorgcatalogus.applicatie.models.ProductModel;
 import nl.wizardit.zorgcatalogus.applicatie.models.VoorraadModel;
 import nl.wizardit.zorgcatalogus.domein.Product;
@@ -40,8 +41,6 @@ public class ProductInformatieController {
 	@FXML
 	private TextArea omschrijvingResultaat;
 	
-	@FXML
-	private TextField gc_invoer;
 	
 	
 	private int productCode;
@@ -73,7 +72,7 @@ public class ProductInformatieController {
 		
 		voorraadModel = new VoorraadModel();
 		
-		Voorraad voorraad = voorraadModel.getVoorraad(1, productCode);
+		Voorraad voorraad = voorraadModel.getVoorraad(ZorgcatalogusApplication.getGemeentecode(), productCode);
 		if(voorraad != null){
 			aantalResultaat.setText(""+voorraad.getVoorraadAantal());
 			omschrijvingResultaat.setText(voorraad.getVoorraadOmschrijving());
@@ -102,10 +101,9 @@ public class ProductInformatieController {
 		ContractenOverzichtController contractenOverzichtController = (ContractenOverzichtController) loader.getController();
 		
 		try{
-			int gemeenteCode;
-			gemeenteCode = Integer.parseInt(gc_invoer.getText());
 			
-			contractenOverzichtController.setCodes(productCode, gemeenteCode);
+			
+			contractenOverzichtController.setCodes(productCode, ZorgcatalogusApplication.getGemeentecode());
 			
 			
 			if(!contractenOverzichtController.vulTabel()){
