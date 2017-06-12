@@ -43,7 +43,6 @@ public class InloggenController {
 			
 			if (gebruikersfunctie == Gebruikersfunctie.ADMINISTRATIEF_MEDEWERKER) {
 				gemeentecode = gebruikerModel.getGebruikerGemeentecode();
-				System.out.println("Gemeentecode: " + gemeentecode);
 			}
 			
 			ZorgcatalogusApplication.setGebruikersInfo(gebruikersfunctie, gemeentecode);

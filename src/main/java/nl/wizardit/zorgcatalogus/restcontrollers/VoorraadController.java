@@ -15,9 +15,14 @@ public class VoorraadController {
 	private VoorraadRepository voorraadRepository;
 	
 	@RequestMapping("/zorgcatalogus/voorraad/{gemeentecode}/{productcode}")
-	public Voorraad getVoorRaad(@PathVariable("gemeentecode") int gemeenteCode, @PathVariable("productcode") int productCode){
+	public Voorraad getVoorraad(@PathVariable("gemeentecode") int gemeenteCode, @PathVariable("productcode") int productCode){
         Voorraad voorraad = voorraadRepository.getVoorraad(gemeenteCode, productCode);
         return voorraad;
+	}
+	
+	@RequestMapping("/zorgcatalogus/update_voorraad/{gemeentecode}/{productcode}/{aantal}")
+	public void updateVoorraad(@PathVariable("gemeentecode") int gemeenteCode, @PathVariable("productcode") int productCode,  @PathVariable("aantal") double aantal) {
+        voorraadRepository.updateVoorraadAantal(gemeenteCode, productCode, aantal);
 	}
 	
 

@@ -41,8 +41,6 @@ public class ProductInformatieController {
 	@FXML
 	private TextArea omschrijvingResultaat;
 	
-	
-	
 	private int productCode;
 	
 	private ProductModel productModel;
@@ -82,6 +80,20 @@ public class ProductInformatieController {
 		return true;
 	}
 	
+	public void bijwerkenAantal(ActionEvent event) throws IOException {
+		double aantal;
+		
+		try {
+			aantal = Double.parseDouble(aantalResultaat.getText());
+		} catch (NumberFormatException e) {
+			System.err.println("Gebruik a.u.b. nummers.");
+			return;
+		}
+		
+		System.out.println(aantal);
+		
+		voorraadModel.updateVoorraadAantal(ZorgcatalogusApplication.getGemeentecode(), productCode, aantal);
+	}
 	
 	public void terugKnop_click(ActionEvent event) throws IOException{
 		((Node) event.getSource()).getScene().getWindow().hide();
