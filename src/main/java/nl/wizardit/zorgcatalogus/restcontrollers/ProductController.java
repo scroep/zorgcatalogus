@@ -21,7 +21,7 @@ public class ProductController {
 
 
 	@RequestMapping("/zorgcatalogus/product/{id}")
-	public Product getProductDienst(@PathVariable("id") int id) {
+	public Product getProduct(@PathVariable("id") int id) {
 	   Product product = productRepository.getProduct(id);
 		return product;
 		

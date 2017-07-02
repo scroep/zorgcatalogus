@@ -26,10 +26,9 @@ public class OfferteController {
 	}
 	
 	
-	@RequestMapping(value ="/zorgcatalogus/offerte/slaop",method=RequestMethod.POST)
+	@RequestMapping(value ="/zorgcatalogus/offerte/toevoegen",method=RequestMethod.POST)
 	public Offerte slaOfferteOp(@RequestBody Offerte offerte){
 		 offerteRepository.offerteOpslaan(offerte);
-		 System.out.println("test: s"+ offerte.getGemeenteCode());
 		 return offerte;
 	 }
 

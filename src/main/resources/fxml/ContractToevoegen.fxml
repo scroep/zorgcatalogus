@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="619.0" prefWidth="502.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.ContractToevoegenController">
+<AnchorPane prefHeight="619.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.wizardit.zorgcatalogus.applicatie.controllers.ContractToevoegenController">
    <children>
       <Button layoutX="330.0" layoutY="565.0" mnemonicParsing="false" onAction="#toevoegenKnop_klik" text="Toevoegen" />
       <Label layoutX="117.0" layoutY="38.0" text="Contract toevoegen">
@@ -33,5 +32,6 @@
       <TextArea fx:id="o_invoer" layoutX="216.0" layoutY="292.0" prefHeight="92.0" prefWidth="201.0" />
       <TextField fx:id="p_invoer" layoutX="216.0" layoutY="455.0" prefHeight="27.0" prefWidth="194.0" />
       <TextField fx:id="a_invoer" layoutX="216.0" layoutY="491.0" prefHeight="27.0" prefWidth="194.0" />
+      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#terugKnop_klik" text="terug" />
    </children>
 </AnchorPane>

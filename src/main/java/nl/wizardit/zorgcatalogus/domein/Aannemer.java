@@ -1,13 +1,13 @@
 package nl.wizardit.zorgcatalogus.domein;
 
 public class Aannemer {
-	public String aannemerKvkNummer;
-	public int specialiteitCode;
-	public String aannemerNaam;
-	public String aannemerTelefoonnummer;
-	public String aannemerPostcode;
-	public String aannemerHuisnummer;
-	public int eerderIngehuurd;
+	private String aannemerKvkNummer;
+	private int specialiteitCode;
+	private String aannemerNaam;
+	private String aannemerTelefoonnummer;
+	private String aannemerPostcode;
+	private String aannemerHuisnummer;
+	private int eerderIngehuurd;
 	
 	public Aannemer(){
 		

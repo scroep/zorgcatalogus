@@ -20,14 +20,14 @@ public class ProductRepository {
 	public Product getProduct(int productCode) {
 		Product product = null;
 		
-		//try {
+		try {
 			jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
 			
 			
 			product = (Product) jdbcTemplate.queryForObject(
 					"SELECT * FROM sp_zoek_product(?); ",
 					new Object[] {productCode}, new ProductRowMapper());
-		//} catch (DataAccessException e) {}
+		} catch (DataAccessException e) {}
 		
 		return product;
 	}

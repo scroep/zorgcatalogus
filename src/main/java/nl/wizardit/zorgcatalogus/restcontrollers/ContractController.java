@@ -27,7 +27,7 @@ public class ContractController {
 	}
 	
 	@RequestMapping("/zorgcatalogus/contract/{gemeentecode}")
-	public List<Contract> getAlleContract(@PathVariable("gemeentecode") int gemeenteCode){
+	public List<Contract> getAlleContracten(@PathVariable("gemeentecode") int gemeenteCode){
 		List<Contract> contracten = contractRepository.getAlleContracten(gemeenteCode);
 		return contracten;
 	}

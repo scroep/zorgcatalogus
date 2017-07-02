@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import nl.wizardit.zorgcatalogus.domein.Evenement;
-import nl.wizardit.zorgcatalogus.domein.Offerte;
 
 @Repository
 public class EvenementRepository {
@@ -32,6 +31,27 @@ public class EvenementRepository {
 		  return evenementen;
 		  
 	  }
+	  
+	  public void evenementToevoegen(Evenement evenement, int gemeenteCode){
+	
+		  try{
+				jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
+				jdbcTemplate.update("SELECT sp_evenement_toevoegen(?,?,?,?,?);", new Object[]{gemeenteCode, evenement.getVerenigingCode(),  evenement.getEvenementNaam(),
+						evenement.getEvenementDatum(),evenement.getEvenementOmschrijving() });
+
+			 }catch (DataAccessException e) {} 
+	  }
+	  
+	  public void evenementUpdaten(Evenement evenement, int gemeenteCode){
+			
+		  try{
+				jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
+				jdbcTemplate.update("SELECT sp_evenement_update(?,?,?,?,?);", new Object[]{gemeenteCode, evenement.getVerenigingCode(),  evenement.getEvenementNaam(),
+						evenement.getEvenementDatum(),evenement.getEvenementOmschrijving() });
+
+			 }catch (DataAccessException e) {} 
+	  }
+	
 	
 
 }

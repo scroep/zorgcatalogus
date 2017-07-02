@@ -57,7 +57,7 @@ public class ContractRepository {
 	public void contractToevoegen(Contract contract){
 		 try{
 				jdbcTemplate.execute("SET SCHEMA 'zorgcatalogus';");
-				jdbcTemplate.update("SELECT sp_contract_toevoegen(?,?,?,?,?,?,?::money,?);", new Object[]{contract.getProductCode(),contract.getGroepCode(),contract.getLeverancierAgbCode(),contract.getContractStartdatum()
+				jdbcTemplate.update("SELECT sp_contract_toevoegen(?,?,?,?,?,?,?,?);", new Object[]{contract.getProductCode(),contract.getGroepCode(),contract.getLeverancierAgbCode(),contract.getContractStartdatum()
 						,contract.getContractBeschrijving(), contract.getContractEinddatum(), contract.getContractPrijs(), contract.getContractAantal()});
 
 			 }catch (DataAccessException e) {}

@@ -13,7 +13,7 @@ public class OfferteModel {
 	
 	public void offerteOpSlaan(Offerte offerte){
 		
-		    Offerte toegevoegdeOfferte = restTemplate.postForObject("http://localhost:8080/zorgcatalogus/offerte/slaop", offerte, Offerte.class);
+		    Offerte toegevoegdeOfferte = restTemplate.postForObject("http://localhost:8080/zorgcatalogus/offerte/toevoegen", offerte, Offerte.class);
 		    
 		    System.out.println("toegevoegde offerte " + toegevoegdeOfferte.getOfferteTitel());
 	}
